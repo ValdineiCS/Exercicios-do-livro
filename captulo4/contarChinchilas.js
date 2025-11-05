@@ -1,22 +1,20 @@
 let inChin=document.getElementById('inChin');
-let inNum=document.getElementById('inAnos');
+let inAnos=document.getElementById('inAnos');
 let res=document.getElementById('res');
-let botao=document.getElementById('bot')
-botao.addEventListener('click', contarChinchilas=>{
+let botao=document.getElementById('bot').addEventListener('click', contarChinchilas=>{
     let chin=Number(inChin.value);
-    let num=Number(inNum.value);
+    let anos=Number(inAnos.value);
 
-    if(chin<=1||isNaN(chin) || num==0|| isNaN(num)){
-        alert('Preencha os campos para iniciarmos a contagem')
-        inChin.focus()
-        return
+    if(chin<=0||isNaN(chin)||anos<=0||isNaN(anos)){
+        alert('Preencha os campos corretamente pare seguirmos...')
+    }
+    let resultado=chin;
+    let total='';
+
+    for(let i=1;i<=anos;i++){
+        total+=`${i} ano: ${resultado} Chinchilas \n`;
+        resultado=resultado*3;
     }
 
-    var resultado=num;
-    var total=''
-    for(let i=1 ; i<=num; i++){
-        total+=`${i}º Ano: ${resultado} Chinchilas \n`;
-        resultado*=3
-    }
     res.textContent=total
 })
