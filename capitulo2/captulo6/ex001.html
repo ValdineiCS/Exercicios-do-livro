@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var anuncio=prompt('Anúncio');
+        var tam =anuncio.length;
+        var numPalavras=0;
+        for(var i=0 ; i<tam ; i++){
+            if(anuncio.charAt(i)==' '){
+                numPalavras++;
+            }
+        }
+        alert(`Anuncio: ${anuncio} \n numero de palavras: (${numPalavras +1})`)
+    </script>
+</body>
+</html>

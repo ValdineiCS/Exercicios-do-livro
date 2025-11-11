@@ -58,7 +58,7 @@ function listarNoticias(){
 
     let totalNoticias='';
     for(let i=0 ; i<ultimas.length ; i++){
-        totalNoticias+=` ${i+1}) ${ultimas[i]} \n`
+        totalNoticias+=`${i+1}) ${ultimas[i]} \n`
     }
 
     ultNoticias.textContent=`${ultimas.length} Últimas notícias\n------------------------------\n ${totalNoticias}`
