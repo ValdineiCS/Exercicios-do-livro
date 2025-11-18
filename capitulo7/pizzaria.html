@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria</title>
+
+    <style>
+
+        .oculta{
+            display:none;
+        }
+        .exibe{
+            display: hidden;
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <h1>Pizzaria - Controle de Pedidos</h1>
+
+    <p>Item do Pedido:
+        <input type="radio" name="produto" id="rbPizza" checked> Pizza
+        <input type="radio" name="produto" id="rbBebida"> Bebida
+        <span>Item:</span>
+        <select name="" id="inPizza">
+            <option value="Média">Pizza Média</option>
+            <option value="Grande">Pizza Grande</option>
+            <option value="Pequena">Pizza Pequena</option>
+        </select>
+        <select name="" id="inBebida" class="oculta">
+            <option value="refri">Refrigerante</option>
+            <option value="suco">Jarra de Suco</option>
+            <option value="Agua">Agua Mineral</option>
+        </select>
+    </p>
+
+    <p>Detalhes do Item:
+        <input type="text" name="" id="inDetalhes" class="detalhes">
+        <input type="button" name="" id="btAdicionar" value="Adicionar">
+    </p>
+
+    <pre id="outPedido"></pre>
+    <script src="pizzaria.js"></script>
+</body>
+</html>

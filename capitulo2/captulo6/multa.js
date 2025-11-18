@@ -10,9 +10,9 @@ function calcularData(){
     let data=inData.value;
     let valor=Number(inValor.value);
 
-    if(data==''||valor==0 || isNaN(valor)){
+    if(data==''||valor<=0 || isNaN(valor)){
         alert('Insira uma data e um valor para fazermos o cálculo')
-        inData.value;
+        inData.focus();
         return
     }
 
@@ -39,7 +39,7 @@ function calcularData(){
     let desconto=valor * (20/100); //Calculei o desconto em 20% do valor
     let valorFinal= valor-desconto; //o valor final é o valor digitado menos o desconto
 
-    let formatoBr=limite.toLocaleDateString('pt-BT') //Converti a data para o formado brasileiro
+    let formatoBr=limite.toLocaleDateString('pt-BR') //Converti a data para o formado brasileiro
 
     outData.textContent=`Data limite para pagamento com desconto: ${formatoBr}` //Exibi na tela 
     outValor.textContent=`Valor com Desconto: R$${valorFinal}`;//Também exibi na tela
