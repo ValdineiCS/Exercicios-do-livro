@@ -19,7 +19,7 @@ function incluirAposta(){
         var melanciaNome=localStorage.getItem('melanciaNome') +';'+nome
         var melanciaPeso=localStorage.getItem('melanciaPeso') + ';'+peso
 
-        localStorage.setItem('melanciaNome', 'melanciaNome')
+        localStorage.setItem('melanciaNome', melanciaNome)
         localStorage.setItem('melanciaPeso', melanciaPeso);
     }else{
         localStorage.setItem('melanciaNome', nome);
@@ -59,11 +59,11 @@ function mostrarApostas(){
     var linhas='';
 
     for(var i=0 ; i<nomes.length ; i++){
-        linhas+=nomes[i] + '-' + pesos[i]+ 'gr \n';
+        linhas+=nomes[i] + '-' + pesos[i]+ "kg \n";
     }
     outApostas.textContent=linhas
 }
-mostrarApostas
+mostrarApostas()
 
 function verificarVencedor(){
     if(!localStorage.getItem('melanciaNome')){
@@ -91,10 +91,10 @@ function verificarVencedor(){
             vencedorPeso=Number(pesos[i]);
         }
     }
-    var mensagem='Resultado - Peso Correto: '+ pesoCorreto +'gr';
+    var mensagem='Resultado - Peso Correto: '+ pesoCorreto +'kg';
     mensagem+='\n-----------------------------------------------';
-    mensagem +='\nApostas: '+ vencedorPeso + 'gr';
-    mensagem+='\nAposta: ' + vencedorPeso + 'gr';
+    mensagem +='\nApostas: '+ vencedorPeso + 'kg';
+    mensagem+='\nAposta: ' + vencedorPeso + 'kg';
     alert(mensagem);
 }
 var btVencedor=document.getElementById('btVencedor');
@@ -107,3 +107,6 @@ function limparApostas(){
         mostrarApostas();
     }
 }
+
+var btLimpar=document.getElementById('btLimpar');
+btLimpar.addEventListener('click', limparApostas)
